@@ -10,7 +10,7 @@ player.connect("switch_spheres", self, "make_360_visible"):
 
 sphereconnect.connect("on_click", self, "sphere_invisible"):
 	sphereconnect.visible = false #go invisible before entering
-	print("nextSphere went invisible")	
+	print("nextSphere went invisible")
 
 
 

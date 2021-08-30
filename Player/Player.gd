@@ -73,6 +73,7 @@ func _process(delta):
 	if letgo == true:
 		locked = false
 	if tonextsphere == true:
+		emit_signal("switch_spheres")
 		
 		if (interpolation_value < 1):
 			
