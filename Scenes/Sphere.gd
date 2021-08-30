@@ -1,15 +1,8 @@
 extends MeshInstance
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var player = $Player
 
 
-# Called when the node enters the scene tree for the first time.
-
-func _process(delta):
-	if InformationNode.RequestName == true:
-		InformationNode.CurrentSphere = self.get_name()
-		visible = false
-	if InformationNode.CurrentSphere != self.get_name():
-		visible = true
+func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
+	if player.tonextsphere == true:
+		emit_signal("on_click")

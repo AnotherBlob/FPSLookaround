@@ -7,7 +7,7 @@ var letgo = true
 var gooutside = true
 var tonextsphere = false
 var starting_position
-export (float) var speed = 3
+export (float) var speed = 2
 var where = global_transform.origin
 
 
@@ -54,7 +54,8 @@ func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx
 			letgo = true
 			print("released inside ")
 			tonextsphere = true
-			
+			emit_signal("last_360_invisible")
+			#CALL POINT HERE?
 			#WARP TO NEXT CIRCLE????????????????
 			
 			
@@ -74,17 +75,17 @@ func _process(delta):
 	if tonextsphere == true:
 		
 		if (interpolation_value < 1):
-			InformationNode.RequestName()
+			
 			interpolation_value += delta * speed
 			
 		if (interpolation_value > 1):
 			global_transform.origin = starting_position.linear_interpolate(InformationNode.nextSphere, interpolation_value)
-			InformationNode.RequesterOff()
 			tonextsphere = false
 			
 	var where = global_transform.origin
 	if Input.is_action_just_pressed("ui_accept"):
 		print(where)
+		
 
 
 
