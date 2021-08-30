@@ -1,32 +1,23 @@
 extends Spatial
-
-onready var sphereconnect = get_node("Sphere")
-onready var sphere360connect = get_node("360Sphere")
-onready var player = get_node("../Player")
-
-player.connect("switch_spheres", self, "make_360_visible"):
-	get_node("360Sphere").visible = true #nextsphere will show up
-	print("nextSphere360 appeared")
-
-sphereconnect.connect("on_click", self, "sphere_invisible"):
-	sphereconnect.visible = false #go invisible before entering
-	print("nextSphere went invisible")
-
-
-
-#get_node("360Sphere").visible  #Tell 360Sphere to go invisible when player exits the location
-#get_node("Sphere").visible 	#Tell the sphere to go invisible when the player enters the location
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var sphereconnect = get_node("Sphere")
+	var sphere360connect = get_node("360Sphere")
+	var player = get_node("../Player")
+
+#player.connect("switch_spheres", self, "make_360_visible"):
+	#get_node("360Sphere").visible = true #nextsphere will show up
+	#print("nextSphere360 appeared")
+
+#sphereconnect.connect("on_click", self, "sphere_invisible"):
+	#sphereconnect.visible = false #go invisible before entering
+	#print("nextSphere went invisible")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+
+func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
+	if Input.is_action_just_pressed("mouseleftclick"):
+		print("huh??")
+		InformationNode.CurrentPosition = get_node("Sphere").global_transform.origin
+		get_node("Sphere").visible = false
+		get_node("360Sphere").visible = true

@@ -14,6 +14,7 @@ var where = global_transform.origin
 onready var head = $Head
 onready var camera = $Head/Camera
 
+
 var interpolation_value = 0
 
 
@@ -54,7 +55,6 @@ func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx
 			letgo = true
 			print("released inside ")
 			tonextsphere = true
-			emit_signal("last_360_invisible")
 			#CALL POINT HERE?
 			#WARP TO NEXT CIRCLE????????????????
 			

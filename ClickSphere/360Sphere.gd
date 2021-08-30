@@ -1,8 +1,7 @@
 extends Spatial
 var player = null
+ 
 
-func _ready():
-	visible = false
 
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
 	InformationNode.nextSphere = global_transform.origin
@@ -15,8 +14,7 @@ func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx
 				InformationNode.CurrentSphere360 = self.get_name()
 			
 func _process(delta):
-	if InformationNode.CurrentSphere360 == self.get_name():
-		
+	if InformationNode.CurrentPosition == self.global_transform.origin:
 		visible = true
 	else:
 		visible = false
