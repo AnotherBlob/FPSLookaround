@@ -27,14 +27,7 @@ func _ready():
 
 
 func _input(event): #look for input method
-	if Input.is_mouse_button_pressed(true) and locked == false and letgo == true:
-		if event is InputEventMouseMotion: # does the mouse move
-			head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity)) #negative because it's inverted
-			
-			var x_delta = event.relative.y * mouse_sensitivity #how far of an angle do we want to move by?
-			if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90: #is it pushing it past the 90 degrees boundary?
-				camera.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity)) #if it isn't, rotate the camera
-				camera_x_rotation += x_delta #increase the camera rotation value to keep track
+	
 
 	
 	if event is InputEventMouseButton:
