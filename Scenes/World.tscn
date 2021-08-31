@@ -13,10 +13,23 @@ script = ExtResource( 4 )
 
 [node name="Point1" parent="." instance=ExtResource( 8 )]
 
+[node name="MeshInstance2" parent="Point1/360Sphere" index="0"]
+img = "untitled"
+
 [node name="Point2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.8615 )
+
+[node name="360Sphere" parent="Point2" index="0"]
+img = "h"
+
+[node name="MeshInstance2" parent="Point2/360Sphere" index="0"]
+img = "sphere"
 
 [node name="Point3" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89462, 0, -28.3328 )
 
 [connection signal="ready" from="Timer" to="Player" method="_on_Timer_ready"]
+
+[editable path="Point1"]
+[editable path="Point2"]
+[editable path="Point3"]

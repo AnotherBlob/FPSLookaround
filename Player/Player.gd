@@ -9,8 +9,6 @@ var tonextsphere = false
 var starting_position
 var player_position
 export (float) var speed = 2
-var where = global_transform.origin
-
 
 onready var head = get_node("../Head")
 onready var camera = get_node("../Head/Camera")
@@ -66,23 +64,14 @@ func _process(delta):
 	if letgo == true:
 		locked = false
 	if tonextsphere == true:
-		emit_signal("switch_spheres")
-		
-		if (interpolation_value < 1):
-			
-			interpolation_value += delta * speed
-			
-		if (interpolation_value > 1):
-			global_transform.origin = starting_position.linear_interpolate(InformationNode.nextSphere, interpolation_value)
-			tonextsphere = false
+		global_transform.origin = InformationNode.CurrentPosition
 			
 	var where = global_transform.origin
 	if Input.is_action_just_pressed("ui_accept"):
 		print(where)
 		
 func _physics_process(delta):
-	player_position = get_global_transform()
-	player_position = InformationNode.CurrentPosition 
+	global_transform.origin = InformationNode.CurrentPosition
 
 
 

@@ -1,7 +1,26 @@
 extends Spatial
+onready var sphere = get_node("MeshInstance2")
 var player = null
- 
 
+export var img = "untitled"
+
+func _ready():
+	load_img("res://Panoramas/"+img+".png")
+
+func load_img(res):
+	var material = SpatialMaterial.new()
+	material.params_cull_mode = 2
+	material.albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+	material.albedo_texture = load(res)
+	material.metallic_specular = 0.0
+	material.roughness = 0.0764706
+	material.emission_enabled = true
+	material.emission = Color( 0, 0, 0, 1 )
+	material.emission_energy = 1.0
+	material.emission_operator = 0
+	material.emission_on_uv2 = false
+	material.emission_texture = load(res)
+	sphere.set_surface_material(0, material)
 
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
 	InformationNode.nextSphere = global_transform.origin

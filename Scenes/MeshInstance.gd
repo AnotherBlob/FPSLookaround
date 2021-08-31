@@ -1,5 +1,7 @@
 extends MeshInstance
 
+export var img = "what"
+
 func load_img(res):
 	var material = SpatialMaterial.new()
 	material.params_cull_mode = 2
@@ -21,8 +23,8 @@ func load_img(res):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var img = "untitled"
-	load_img("res://Panoramas/"+img+".jpg")
+	
+	load_img("res://Panoramas/"+img+".png")
 	pass # Replace with function body.
 
 
