@@ -12,9 +12,8 @@ export (float) var speed = 2
 var where = global_transform.origin
 
 
-onready var head = $Head
-onready var camera = $Head/Camera
-
+onready var head = get_node("../Head")
+onready var camera = get_node("../Head/Camera")
 
 var interpolation_value = 0
 
