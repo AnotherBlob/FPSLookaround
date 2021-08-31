@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 InformationNode="*res://nodes.gd"
+Player="*res://Player/Player.gd"
 
 [input]
 

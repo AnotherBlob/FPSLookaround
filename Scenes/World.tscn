@@ -16,4 +16,7 @@ script = ExtResource( 4 )
 [node name="Point2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.8615 )
 
+[node name="Point3" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28.3328 )
+
 [connection signal="ready" from="Timer" to="Player" method="_on_Timer_ready"]

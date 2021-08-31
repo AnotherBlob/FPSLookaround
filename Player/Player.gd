@@ -7,6 +7,7 @@ var letgo = true
 var gooutside = true
 var tonextsphere = false
 var starting_position
+var player_position
 export (float) var speed = 2
 var where = global_transform.origin
 
@@ -87,7 +88,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		print(where)
 		
-
+func _physics_process(delta):
+	player_position = get_global_transform()
+	InformationNode.CurrentPosition = player_position
 
 
 
