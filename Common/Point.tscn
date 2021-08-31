@@ -43,5 +43,5 @@ script = ExtResource( 5 )
 [node name="CollisionShape" type="CollisionShape" parent="Sphere/Area"]
 shape = SubResource( 4 )
 
-[connection signal="input_event" from="Sphere/Area" to="." method="_on_Area_input_event"]
 [connection signal="input_event" from="Sphere/Area" to="360Sphere" method="_on_Area_input_event"]
+[connection signal="input_event" from="Sphere/Area" to="." method="_on_Area_input_event"]

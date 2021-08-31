@@ -1,4 +1,5 @@
 extends Spatial
+signal ReplaceInfo
 func _ready():
 	var sphereconnect = get_node("Sphere")
 	var sphere360connect = get_node("360Sphere")
@@ -14,10 +15,9 @@ func _ready():
 
 
 
-
 func _on_Area_input_event(camera, event, click_position, click_normal, shape_idx):
 	if Input.is_action_just_pressed("mouseleftclick"):
 		print("huh??")
-		InformationNode.CurrentPosition = get_node("Sphere").global_transform.origin
+		InformationNode.CurrentPosition = InformationNode.nextSphere
 		get_node("Sphere").visible = false
 		get_node("360Sphere").visible = true

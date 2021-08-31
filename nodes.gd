@@ -2,14 +2,16 @@ extends Spatial
 
 var CurrentPosition
 
+func _ready():
+	CurrentPosition = Player.global_transform.origin
 #onready var player = $Player
 onready var player = $Player
 var nextSphere
 var done
 
-func RequestName():
+func _process(delta):
 	
-	pass
+	print(CurrentPosition)
 	
 
 	

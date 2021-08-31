@@ -82,7 +82,7 @@ func _process(delta):
 		
 func _physics_process(delta):
 	player_position = get_global_transform()
-	InformationNode.CurrentPosition = player_position
+	player_position = InformationNode.CurrentPosition 
 
 
 
