@@ -1,7 +1,7 @@
 extends Camera
 
-onready var head = get_node("Head")
-onready var camera = get_node("../Head/Camera")
+onready var head = get_parent()
+onready var camera = self
 
 # Declare member variables here. Examples:
 # var a = 2
