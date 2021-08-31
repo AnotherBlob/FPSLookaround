@@ -20,7 +20,7 @@ img = "untitled"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.8615 )
 
 [node name="360Sphere" parent="Point2" index="0"]
-img = "h"
+img = "unt.png"
 
 [node name="MeshInstance2" parent="Point2/360Sphere" index="0"]
 img = "sphere"

@@ -2,10 +2,10 @@ extends Spatial
 onready var sphere = get_node("MeshInstance2")
 var player = null
 
-export var img = "untitled"
+export var img = "untitled.png"
 
 func _ready():
-	load_img("res://Panoramas/"+img+".png")
+	load_img("res://Panoramas/"+img)
 
 func load_img(res):
 	var material = SpatialMaterial.new()
