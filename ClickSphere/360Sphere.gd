@@ -11,7 +11,7 @@ func _ready():
 
 func load_img(res):
 	var material = SpatialMaterial.new()
-	material.params_cull_mode = 2
+	material.params_cull_mode = 1
 	material.albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 	material.albedo_texture = load(res)
 	material.metallic_specular = 0.0

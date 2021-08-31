@@ -6,7 +6,7 @@
 [ext_resource path="res://Common/Point.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
-params_cull_mode = 2
+params_cull_mode = 1
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 albedo_texture = ExtResource( 2 )
 metallic_specular = 0.0
@@ -19,7 +19,7 @@ emission_on_uv2 = false
 emission_texture = ExtResource( 2 )
 
 [sub_resource type="SpatialMaterial" id=2]
-params_cull_mode = 2
+params_cull_mode = 1
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 albedo_texture = ExtResource( 2 )
 metallic_specular = 0.0
@@ -32,7 +32,7 @@ emission_on_uv2 = false
 emission_texture = ExtResource( 2 )
 
 [sub_resource type="SpatialMaterial" id=3]
-params_cull_mode = 2
+params_cull_mode = 1
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 albedo_texture = ExtResource( 2 )
 metallic_specular = 0.0
