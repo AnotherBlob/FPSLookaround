@@ -7,7 +7,7 @@
 radius = 30.0
 height = 60.0
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=6]
 script/source = "extends MeshInstance
 
 
@@ -18,36 +18,36 @@ script/source = "extends MeshInstance
 #	pass
 "
 
-[sub_resource type="SphereMesh" id=2]
+[sub_resource type="SphereMesh" id=7]
 
 [sub_resource type="GDScript" id=4]
 script/source = "extends MeshInstance
 "
 
-[sub_resource type="SphereShape" id=3]
+[sub_resource type="SphereShape" id=5]
 
 [node name="Point1" type="Spatial"]
 script = ExtResource( 4 )
 
-[node name="360Sphere" type="Spatial" parent="."]
-script = ExtResource( 2 )
-
-[node name="MeshInstance2" type="MeshInstance" parent="360Sphere"]
+[node name="MeshInstance2" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null
-script = SubResource( 5 )
+script = SubResource( 6 )
+
+[node name="360Sphere" type="Spatial" parent="."]
+script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="360Sphere"]
 
 [node name="Sphere" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
+mesh = SubResource( 7 )
 material/0 = null
 script = SubResource( 4 )
 
 [node name="Area" type="Area" parent="Sphere"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Sphere/Area"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [connection signal="input_event" from="Sphere/Area" to="360Sphere" method="_on_Area_input_event"]
 [connection signal="input_event" from="Sphere/Area" to="." method="_on_Area_input_event"]

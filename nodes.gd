@@ -4,8 +4,7 @@ var CurrentPosition
 
 func _ready():
 	CurrentPosition = Player.global_transform.origin
-#onready var player = $Player
-onready var player = $Player
+
 var nextSphere
 var done
 

@@ -10,9 +10,6 @@ var starting_position
 var player_position
 export (float) var speed = 2
 
-onready var head = get_node("../Head")
-onready var camera = get_node("../Head/Camera")
-
 var interpolation_value = 0
 
 
