@@ -2,13 +2,11 @@ tool
 extends Spatial
 onready var sphere = get_node("MeshInstance2")
 var player = null
-
-var img setget set_img
-
-
+onready var img setget set_img
 
 
 func load_img(res):
+	
 	var material = SpatialMaterial.new()
 	material.params_cull_mode = 1
 	material.albedo_color = Color( 0.8, 0.8, 0.8, 1 )

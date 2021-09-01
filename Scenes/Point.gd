@@ -1,13 +1,14 @@
 extends Spatial
 signal ReplaceInfo
 onready var sphere360connect = get_node("Sphere")
-export onready var texture_name = "untitled.png"
+export var img = "untitled.png"
 
 func _ready():
 	var sphereconnect = get_node("Sphere")
 	var sphere360connect = get_node("360Sphere")
 	var player = get_node("../Player")
-
+	sphere360connect.img = img
+	
 #player.connect("switch_spheres", self, "make_360_visible"):
 	#get_node("360Sphere").visible = true #nextsphere will show up
 	#print("nextSphere360 appeared")
