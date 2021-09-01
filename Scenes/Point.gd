@@ -27,7 +27,7 @@ func set_img(res):
 		load_img("res://Panoramas/"+img)
 
 func _ready():
-	pass
+	load_img("res://Panoramas/"+img)
 #	var sphereconnect = get_node("Sphere")
 #	var sphere = get_node("MeshInstance2")
 #	var player = get_node("../Player")
@@ -35,7 +35,12 @@ func _ready():
 #player.connect("switch_spheres", self, "make_360_visible"):
 	#get_node("360Sphere").visible = true #nextsphere will show up
 	#print("nextSphere360 appeared")
-
+func _process(delta):
+	if not Engine.editor_hint:
+		if InformationNode.CurrentPosition == self.global_transform.origin:
+			sphere.visible = true
+		else:
+			sphere.visible = false
 #sphereconnect.connect("on_click", self, "sphere_invisible"):
 	#sphereconnect.visible = false #go invisible before entering
 	#print("nextSphere went invisible")

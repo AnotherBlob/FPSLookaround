@@ -8,10 +8,6 @@ func _ready():
 var nextSphere
 var done
 
-func _process(delta):
-	
-	print(CurrentPosition)
-	
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

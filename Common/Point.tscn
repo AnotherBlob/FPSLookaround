@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://Panoramas/untitled.png" type="Texture" id=1]
 [ext_resource path="res://ClickSphere/360Sphere.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Point.gd" type="Script" id=4]
 
@@ -7,7 +8,20 @@
 radius = 30.0
 height = 60.0
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="SpatialMaterial" id=2]
+params_cull_mode = 1
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+albedo_texture = ExtResource( 1 )
+metallic_specular = 0.0
+roughness = 0.0764706
+emission_enabled = true
+emission = Color( 0, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+emission_texture = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
 script/source = "extends MeshInstance
 
 
@@ -18,54 +32,36 @@ script/source = "extends MeshInstance
 #	pass
 "
 
-[sub_resource type="SphereMesh" id=7]
+[sub_resource type="SphereMesh" id=4]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 script/source = "extends MeshInstance
 "
 
-[sub_resource type="SphereShape" id=5]
+[sub_resource type="SphereShape" id=6]
 
 [node name="Point1" type="Spatial"]
 script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
-material/0 = null
-script = SubResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
+material/0 = SubResource( 2 )
+script = SubResource( 3 )
 
 [node name="360Sphere" type="Spatial" parent="."]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Tween" type="Tween" parent="360Sphere"]
 
 [node name="Sphere" type="MeshInstance" parent="."]
-mesh = SubResource( 7 )
+mesh = SubResource( 4 )
 material/0 = null
-script = SubResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
+script = SubResource( 5 )
 
 [node name="Area" type="Area" parent="Sphere"]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape" type="CollisionShape" parent="Sphere/Area"]
-shape = SubResource( 5 )
-__meta__ = {
-"_edit_lock_": true
-}
+shape = SubResource( 6 )
 
 [connection signal="input_event" from="Sphere/Area" to="360Sphere" method="_on_Area_input_event"]
 [connection signal="input_event" from="Sphere/Area" to="." method="_on_Area_input_event"]
