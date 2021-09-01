@@ -2,7 +2,8 @@ tool
 extends Spatial
 onready var sphere360connect = get_node("Sphere")
 onready var sphere = get_node("MeshInstance2")
-export var img = "untitled.png" setget set_img
+export var texture_name = "untitled.png"
+onready var img = texture_name setget set_img
 var player = null
 
 func load_img(res):
@@ -26,9 +27,10 @@ func set_img(res):
 		load_img("res://Panoramas/"+img)
 
 func _ready():
-	var sphereconnect = get_node("Sphere")
-	var sphere = get_node("MeshInstance2")
-	var player = get_node("../Player")
+	pass
+#	var sphereconnect = get_node("Sphere")
+#	var sphere = get_node("MeshInstance2")
+#	var player = get_node("../Player")
 	
 #player.connect("switch_spheres", self, "make_360_visible"):
 	#get_node("360Sphere").visible = true #nextsphere will show up

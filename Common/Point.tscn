@@ -28,14 +28,23 @@ script/source = "extends MeshInstance
 
 [node name="Point1" type="Spatial"]
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = null
 script = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="360Sphere" type="Spatial" parent="."]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Tween" type="Tween" parent="360Sphere"]
 
@@ -43,11 +52,20 @@ script = ExtResource( 2 )
 mesh = SubResource( 7 )
 material/0 = null
 script = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Area" type="Area" parent="Sphere"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape" type="CollisionShape" parent="Sphere/Area"]
 shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="input_event" from="Sphere/Area" to="360Sphere" method="_on_Area_input_event"]
 [connection signal="input_event" from="Sphere/Area" to="." method="_on_Area_input_event"]
