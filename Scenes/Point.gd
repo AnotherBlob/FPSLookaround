@@ -1,13 +1,34 @@
+tool
 extends Spatial
-signal ReplaceInfo
 onready var sphere360connect = get_node("Sphere")
-export var img = "untitled.png"
+onready var sphere = get_node("MeshInstance2")
+export var img = "untitled.png" setget set_img
+var player = null
+
+func load_img(res):
+	
+	var material = SpatialMaterial.new()
+	material.params_cull_mode = 1
+	material.albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+	material.albedo_texture = load(res)
+	material.metallic_specular = 0.0
+	material.roughness = 0.0764706
+	material.emission_enabled = true
+	material.emission = Color( 0, 0, 0, 1 )
+	material.emission_energy = 1.0
+	material.emission_operator = 0
+	material.emission_on_uv2 = false
+	material.emission_texture = load(res)
+	sphere.set_surface_material(0, material)
+
+func set_img(res):
+	if Engine.editor_hint:
+		load_img("res://Panoramas/"+img)
 
 func _ready():
 	var sphereconnect = get_node("Sphere")
-	var sphere360connect = get_node("360Sphere")
+	var sphere = get_node("MeshInstance2")
 	var player = get_node("../Player")
-	sphere360connect.img = img
 	
 #player.connect("switch_spheres", self, "make_360_visible"):
 	#get_node("360Sphere").visible = true #nextsphere will show up
