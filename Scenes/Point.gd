@@ -2,14 +2,14 @@ tool
 extends Spatial
 onready var sphere360connect = get_node("Sphere")
 onready var sphere = get_node("MeshInstance2")
-export var texture_name = "untitled.png"
+export var texture_name = "Fifth_Martian_Winnter.jpg"
 onready var img = texture_name setget set_img
 var player = null
 
 func load_img(res):
 	
 	var material = SpatialMaterial.new()
-	material.params_cull_mode = 2
+	material.params_cull_mode = 1
 	material.albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 	material.albedo_texture = load(res)
 	material.metallic_specular = 0.0
