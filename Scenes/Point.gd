@@ -1,7 +1,7 @@
 extends Spatial
 signal ReplaceInfo
 onready var sphere360connect = get_node("Sphere")
-export onready var texture_name = "untitled2.png"
+export onready var texture_name = "untitled.png"
 
 func _ready():
 	var sphereconnect = get_node("Sphere")

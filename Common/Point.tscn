@@ -1,15 +1,28 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ClickSphere/360Sphere.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/MeshInstance.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Point.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Sphere.gd" type="Script" id=5]
 
 [sub_resource type="SphereMesh" id=1]
 radius = 30.0
 height = 60.0
 
+[sub_resource type="GDScript" id=5]
+script/source = "extends MeshInstance
+
+
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
 [sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends MeshInstance
+"
 
 [sub_resource type="SphereShape" id=3]
 
@@ -22,14 +35,14 @@ script = ExtResource( 2 )
 [node name="MeshInstance2" type="MeshInstance" parent="360Sphere"]
 mesh = SubResource( 1 )
 material/0 = null
-script = ExtResource( 3 )
+script = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="360Sphere"]
 
 [node name="Sphere" type="MeshInstance" parent="."]
 mesh = SubResource( 2 )
 material/0 = null
-script = ExtResource( 5 )
+script = SubResource( 4 )
 
 [node name="Area" type="Area" parent="Sphere"]
 

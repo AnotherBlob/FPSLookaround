@@ -55,14 +55,16 @@ script = ExtResource( 4 )
 
 [node name="MeshInstance2" parent="Point1/360Sphere" index="0"]
 material/0 = SubResource( 1 )
-img = "untitled"
+script = null
+
+[node name="Sphere" parent="Point1" index="1"]
+script = null
 
 [node name="Point2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21.8615 )
 
 [node name="MeshInstance2" parent="Point2/360Sphere" index="0"]
 material/0 = SubResource( 2 )
-img = "sphere"
 
 [node name="Point3" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89462, 0, -28.3328 )
