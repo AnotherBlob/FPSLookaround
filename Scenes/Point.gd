@@ -9,11 +9,11 @@ var player = null
 func load_img(res):
 	
 	var material = SpatialMaterial.new()
-	material.params_cull_mode = 1
+	material.params_cull_mode = 2
 	material.albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 	material.albedo_texture = load(res)
 	material.metallic_specular = 0.0
-	material.roughness = 0.0764706
+	material.roughness = 0.076
 	material.emission_enabled = true
 	material.emission = Color( 0, 0, 0, 1 )
 	material.emission_energy = 1.0
