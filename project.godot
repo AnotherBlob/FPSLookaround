@@ -19,6 +19,10 @@ config/icon="res://icon.png"
 InformationNode="*res://nodes.gd"
 Player="*res://Player/Player.gd"
 
+[global]
+
+html=false
+
 [input]
 
 ui_select={
